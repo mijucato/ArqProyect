@@ -1,0 +1,14 @@
+language: ruby
+rvm:
+  - 2.0.0
+env:
+  - RAILS_VERSION='->4.0.2'
+  - DB=sqlite
+script:
+  - bundle exec rake db:migrate
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec spec/
+  # - bundle exec rake tests
+branches:
+  only:
+    - master
